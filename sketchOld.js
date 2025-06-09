@@ -42,6 +42,7 @@ let details;
 var isClicked = false;
 var runClick = true;
 var waitTime = 0;
+var RandomIncrement = 1;
 
 function preload() {
   DopeModel = loadModel("681-bas-color-print_NIH3D.stl", true);
@@ -385,7 +386,8 @@ function modelLoaded() {
 }
 function mathFact() {
   //noLoop();
-  randomSeed(834562);
+  RandomIncrement += 1;
+  randomSeed(834562 + RandomIncrement);
   num1 = round(random(9));
   num2 = round(random(9));
   solution = num1 * num2;
@@ -396,15 +398,13 @@ function mathFact() {
 
   //Randomly chooses the correct choice and makes false answers for wrong choices.
   //This is stupid.
-
-  if (CorrectChoice == 0) {
-    Multi[CorrectChoice] = solution;
-  }
-
-  // Multi[0] = 0;
+// Multi[0] = 0;
   // Multi[1] = 1;
   // Multi[2] = 2;
   // Multi[3] = 3;
+  if (CorrectChoice == 0) {
+    Multi[CorrectChoice] = solution;
+  }  
   else {
     Multi[0] = round(random(0, 99));
     while (Multi[0] == solution) {
@@ -426,7 +426,7 @@ function mathFact() {
     while (Multi[2] == solution) {
       Multi[2] = round(random(0, 99));
     }
-    if (CorrectChoice == 3) {
+  if (CorrectChoice == 3) {
       Multi[CorrectChoice] = solution;
     } else {
       Multi[3] = round(random(0, 99));
