@@ -42,7 +42,7 @@ let details;
 var isClicked = false;
 var runClick = true;
 var waitTime = 0;
-var RandomIncrement = 1;
+var RandomIncrement = 2;
 
 function preload() {
   DopeModel = loadModel("681-bas-color-print_NIH3D.stl", true);
@@ -386,7 +386,7 @@ function modelLoaded() {
 }
 function mathFact() {
   //noLoop();
-  RandomIncrement += 1;
+  RandomIncrement *= 2;
   randomSeed(834562 + RandomIncrement);
   num1 = round(random(9));
   num2 = round(random(9));
