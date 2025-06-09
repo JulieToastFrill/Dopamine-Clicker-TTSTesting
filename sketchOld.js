@@ -385,6 +385,7 @@ function modelLoaded() {
 }
 function mathFact() {
   //noLoop();
+  randomSeed(834562);
   num1 = round(random(9));
   num2 = round(random(9));
   solution = num1 * num2;
