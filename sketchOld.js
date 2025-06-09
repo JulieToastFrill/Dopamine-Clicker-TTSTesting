@@ -386,8 +386,9 @@ function modelLoaded() {
 }
 function mathFact() {
   //noLoop();
-  RandomIncrement *= 2;
-  randomSeed(834562 + RandomIncrement);
+  RandomIncrement = RandomIncrement * 2;
+  randomSeed(15 * RandomIncrement);
+  
   num1 = round(random(9));
   num2 = round(random(9));
   solution = num1 * num2;
